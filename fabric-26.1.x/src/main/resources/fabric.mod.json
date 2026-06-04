@@ -5,14 +5,14 @@
 	"name": "Let's See My Mods",
 	"description": "Adds a /mods command that lists installed content mods and hides common API/library mods.",
 	"authors": [
-		"Markus"
+		"carrot"
 	],
 	"contact": {},
 	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"de.markus.fabric.letsseemymods.LetsSeeMyMods"
+			"de.carrot.fabric.letsseemymods.LetsSeeMyMods"
 		]
 	},
 	"depends": {

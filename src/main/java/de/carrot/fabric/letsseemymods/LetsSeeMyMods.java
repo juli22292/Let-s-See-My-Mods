@@ -1,4 +1,4 @@
-package de.markus.fabric.letsseemymods;
+package de.carrot.fabric.letsseemymods;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
