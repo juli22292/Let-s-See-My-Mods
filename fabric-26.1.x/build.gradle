@@ -1,0 +1,66 @@
+plugins {
+	id "net.fabricmc.fabric-loom" version "${loom_version}"
+	id "maven-publish"
+}
+
+base {
+	archivesName = "${rootProject.archives_base_name}-fabric-26.1.x"
+}
+
+loom {
+	mods {
+		"${rootProject.mod_id}" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+sourceSets {
+	main {
+		java.setSrcDirs(["../src/main/java"])
+		resources.setSrcDirs(["src/main/resources"])
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+	def props = [
+		version: project.version,
+		minecraft_range: project.minecraft_range,
+		java_version: project.java_version
+	]
+
+	inputs.properties props
+	filesMatching("fabric.mod.json") {
+		expand props
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = project.java_version as int
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.toVersion(project.java_version)
+	targetCompatibility = JavaVersion.toVersion(project.java_version)
+}
+
+jar {
+	from(rootProject.file("LICENSE")) {
+		rename { "${it}_${base.archivesName.get()}" }
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+}

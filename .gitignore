@@ -1,0 +1,12 @@
+.gradle/
+.gradle-local/
+.jdk-local/
+build/
+out/
+*.iml
+.idea/
+.vscode/
+*.zip
+
+fabric-1.21.x/build/
+fabric-26.1.x/build/

@@ -1,0 +1,24 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
+		gradlePluginPortal()
+	}
+}
+
+dependencyResolutionManagement {
+	repositories {
+		maven {
+			name = "Fabric"
+			url = "https://maven.fabricmc.net/"
+		}
+		mavenCentral()
+	}
+}
+
+rootProject.name = "letsseemymods"
+
+include "fabric-1.21.x"
+include "fabric-26.1.x"

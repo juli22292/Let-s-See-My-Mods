@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "letsseemymods",
+	"version": "${version}",
+	"name": "Let's See My Mods",
+	"description": "Adds a /mods command that lists installed content mods and hides common API/library mods.",
+	"authors": [
+		"Markus"
+	],
+	"contact": {},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.markus.fabric.letsseemymods.LetsSeeMyMods"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"fabric-api": "*",
+		"minecraft": "${minecraft_range}",
+		"java": ">=${java_version}"
+	}
+}
