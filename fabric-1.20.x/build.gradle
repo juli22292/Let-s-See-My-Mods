@@ -1,10 +1,10 @@
 plugins {
-	id "net.fabricmc.fabric-loom" version "${loom_version}"
+	id "net.fabricmc.fabric-loom-remap" version "${loom_version}"
 	id "maven-publish"
 }
 
 base {
-	archivesName = "${rootProject.archives_base_name}-fabric-26.1.x"
+	archivesName = "${rootProject.archives_base_name}-fabric-1.20.x"
 }
 
 loom {
@@ -24,8 +24,9 @@ sourceSets {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	implementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
 processResources {

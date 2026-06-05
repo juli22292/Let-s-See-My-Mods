@@ -17,7 +17,7 @@ loom {
 
 sourceSets {
 	main {
-		java.setSrcDirs(["../src/main/java"])
+		java.setSrcDirs(["../src/main/java", "src/main/java"])
 		resources.setSrcDirs(["src/main/resources"])
 	}
 }

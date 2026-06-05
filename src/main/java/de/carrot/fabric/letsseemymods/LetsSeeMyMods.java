@@ -73,7 +73,7 @@ public final class LetsSeeMyMods implements ModInitializer {
 			}
 		}
 
-		source.sendSuccess(() -> message, false);
+		MessageBridge.sendSuccess(source, message, false);
 	}
 
 	private record VisibleMod(String id, String displayName, String version) {
